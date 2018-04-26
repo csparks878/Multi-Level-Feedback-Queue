@@ -39,9 +39,9 @@ class Scheduler {
     // The scheduler's interrupt handler that receives a queue, a process, and an interrupt string constant
     // Should handle PROCESS_BLOCKED, PROCESS_READY, and LOWER_PRIORITY interrupts.
     handleInterrupt(queue, process, interrupt) {
-			if (interrupt = SchedulerInterrupt.PROCESS_READY && queue.QueueType === CPU_QUEUE) {
+			if (interrupt = SchedulerInterrupt.PROCESS_READY && queue.queueType === CPU_QUEUE) {
 				addNewProcess(process);
-			} else if (queue.QueueType ===	BLOCKING_QUEUE && interrupt = SchedulerInterrupt.PROCESS_BLOCKED) {
+			} else if (interrupt = SchedulerInterrupt.PROCESS_BLOCKED) {
 				addNewProcess(process);
 			}
 			if (interrupt === SchedulerInterrupt.LOWER_PRIORITY && this.runningQueues.indexOf(queue) < 3) {
